@@ -36,4 +36,4 @@ workflows:
             - build_and_test
           filters:
             branches:
-              only: project_13v02
+              only: master
