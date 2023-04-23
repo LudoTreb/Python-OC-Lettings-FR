@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Letting, Profile
+from .models import Letting
 
 
 # Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -25,7 +25,6 @@ def lettings_index(request):
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings_index.html', context)
-
 
 # # Cras ultricies dignissim purus, vitae hendrerit ex varius non.
 # # In accumsan porta nisl id eleifend. Praesent dignissim,

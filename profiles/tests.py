@@ -1,19 +1,8 @@
-from django.test import TestCase
 from django.contrib.auth.models import User
+from django.test import TestCase
 from django.urls import reverse
 
 from profiles.models import Profile
-
-# Create your tests here.
-import pytest
-
-
-# @pytest.mark.django_db
-# class TestProfile:
-#
-#     def test_create_profile(self):
-#         profile = Profile.objects.create(user=User.objects.create_user("me", "meme", "me@me.me"))
-#         assert profile
 
 
 class ProfilesPageTestCase(TestCase):
@@ -50,4 +39,3 @@ class ProfilesPageEmptyTestCase(TestCase):
         """..."""
         response = self.client.get(self.good_url_index)
         self.assertContains(response, "No profiles are available", status_code=200)
-
