@@ -1,6 +1,4 @@
 import os
-import django_heroku
-import dj_database_url
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
