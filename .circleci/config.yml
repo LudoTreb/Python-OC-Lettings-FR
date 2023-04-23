@@ -11,21 +11,21 @@ jobs:
       - python/install-packages:
           pip-dependency-file: requirements-dev.txt
           pkg-manager: pipenv
-      - run:
-          name: Run pytest
-          command: pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
-      - run:
-          command: flake8
-          name: run flake8
-#      - store_test_results:
-#          path: test-results
-#      - store_artifacts:
-#          path: test-results
-#          destination: tr1
-#      - persist_to_workspace:
-#          root: ~/project
-#          paths:
-#            - .
+#      - run:
+#          name: run pytest
+#          command: pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
+#      - run:
+#          command: flake8
+#          name: run flake8
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: tr1
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
 
 workflows:
   heroku_deploy:
