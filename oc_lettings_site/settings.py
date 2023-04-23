@@ -1,4 +1,6 @@
 import os
+import django_heroku
+import dj_database_url
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -29,7 +31,7 @@ SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "lettingrender.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -124,3 +126,7 @@ STATIC_URL = "/static/"
 MIGRATION_MODULES = {
     "oc_lettings_site": None,
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
