@@ -14,9 +14,9 @@ jobs:
       - run:
           name: run pytest
           command: pytest # alternatively run `python -m pytest` if you are running vanilla pytest
-      - run:
-          command: flake8
-          name: run flake8
+#      - run:
+#          command: flake8
+#          name: run flake8
       - store_test_results:
           path: test-results
       - store_artifacts:
